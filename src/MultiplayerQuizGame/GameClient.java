@@ -7,12 +7,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-// <-----
 
-/**
- * last change: 04.11.2004
- * run: java -cp class beispiel1.DemoClient_1 127.0.0.1 1111
- */
+
 public class GameClient {
   public static final String SERVER_IP = "127.0.0.1";
   public static final int PORT = 9292;

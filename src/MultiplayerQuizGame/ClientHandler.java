@@ -24,10 +24,10 @@ public class ClientHandler implements Runnable {
 
         String playerResponse = in.readLine();
         if (playerResponse.contains("Play")){
-          out.println("Yeah!");
+          out.println("--------------- Welcome to the Quiz-Game!------------------");
         }
 
-        out.println("--------------- Welcome to the Quiz-Game!------------------");
+
 
       }
     } catch (IOException e) {
