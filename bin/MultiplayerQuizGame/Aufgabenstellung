@@ -1,0 +1,16 @@
+Projektarbeiten
+Thema 1 | Multiplayer-Quiz
+Programmieren Sie eine Client-Server-Applikation, bei der mehrere Spieler in einem Quiz gegeneinander antreten. Jede Quizfrage bietet jeweils vier Antwortmöglichkeiten A bis D, wobei die schnellste richtige Antwort gewinnt.
+
+Anforderungen
+Es handelt sich um eine reine Kommandozeilen-Applikation (Command Line Interface, CLI) ohne grafische Benutzeroberfläche (Graphical User Interface, GUI). Ein- und Ausgaben erfolgen in der Regel direkt im entsprechenden IDE-Fenster.
+Sie dürfen den gesamten Unicode-Zeichensatz verwenden.
+Sowohl auf den Clients als auch auf dem Server erscheinen saubere Ausgaben auf der Kommandozeile.
+Die Kommunikation zwischen den Clients und dem Server erfolgt direkt über Sockets.
+Der Server liest die Textdatei mit den Quizfragen ein. Eine Quizfrage besteht aus einer Frage mit jeweils vier Antwortmöglichkeiten A bis D (wie bei «Wer wird Millionär?»).
+Diese Textdatei wird Ihnen von Ihrem Dozenten gestellt.
+Die Spieler/Clients bekommen vom Server jeweils gleichzeitig eine Frage mit den vier Antwortmöglichkeiten zugesandt.
+Der Spieler/Client mit der schnellsten richtigen Antwort bekommt einen Punkt.
+Jeder Spieler/Client wird über den aktuellen Spielstand informiert.
+Sie dürfen kein Java Remote Method Invocation (RMI) und keine Drittbibliotheken verwenden, mit Ausnahme von JUnit.
+Sicherheitsaspekte und die Behandlung von Verbindungsunterbrüchen können Sie ausser Acht lassen.
