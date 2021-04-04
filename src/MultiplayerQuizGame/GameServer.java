@@ -9,10 +9,10 @@ import java.util.concurrent.Executors;
 
 public class GameServer {
 
-
   private static final int PORT = 9292;
   private static final ArrayList<ClientHandler> clients = new ArrayList<>();
   private static final ExecutorService pool = Executors.newFixedThreadPool(5);
+
 
   public static void main(String[] args) throws IOException {
     // Server verbinden:
@@ -29,6 +29,7 @@ public class GameServer {
         pool.execute(clientThread);
         System.out.println("Connected");
       }
+
     }
   }
 }

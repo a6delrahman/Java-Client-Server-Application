@@ -8,34 +8,36 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-
 public class GameClient {
   public static final String SERVER_IP = "127.0.0.1";
   public static final int PORT = 9292;
 
   public static void main(String[] args) throws IOException {
-  Socket socket = new Socket(SERVER_IP, PORT);
+    Socket socket = new Socket(SERVER_IP, PORT);
 
-  ServerConnection serverCon = new ServerConnection(socket);
+    ServerConnection serverCon = new ServerConnection(socket);
 
-  BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
-  PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+    BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
-  new Thread(serverCon).start();
 
-  while (true){
+    PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
-    System.out.println("> Type Play, or quit to leave");
-    String command  = keyboard.readLine();
+    new Thread(serverCon).start();
 
-    if (command.contains("quit")) break;
+    while (true) {
 
-    out.println(command);
+      System.out.println("> Type Play, or quit to leave");
+      String command = keyboard.readLine();
 
-    String serverResponse = keyboard.readLine();
-    System.out.println("server says: " + serverResponse);
-  }
-  socket.close();
-  System.exit(0);
+      if (command.contains("quit")) break;
+
+      out.println(command);
+
+      String serverResponse = keyboard.readLine();
+      System.out.println("server says: " + serverResponse);
+
+//      socket.close();
+//      System.exit(0);
+    }
   }
 }
