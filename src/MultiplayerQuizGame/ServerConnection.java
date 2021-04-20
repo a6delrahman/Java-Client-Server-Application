@@ -19,16 +19,14 @@ public class ServerConnection implements Runnable {
   public void run() {
     try {
       while (true) {
-        int counter =0;
+
         String serverResponse = in.readLine();
-
         if (serverResponse == null) break;
-
         System.out.println(serverResponse);
 
       }
 
-    } catch (IOException e) {
+    }  catch (IOException e) {
       e.printStackTrace();
     } finally {
       try {

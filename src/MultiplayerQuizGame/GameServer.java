@@ -20,14 +20,18 @@ public class GameServer {
 
       while (true){
 
-        System.out.println("[SERVER] Waiting for Player connection...");
-        Socket client = listener.accept();
-        System.out.println("[SERVER] Connected to Player Client!");
-        ClientHandler clientThread = new ClientHandler(client, clients);
-        clients.add(clientThread);
+          System.out.println("[SERVER] Waiting for Player connection...");
+          Socket client = listener.accept();
+          System.out.println("[SERVER] Connected to Player Client!");
+          ClientHandler clientThread = new ClientHandler(client, clients);
+          clients.add(clientThread);
 
-        pool.execute(clientThread);
-        System.out.println("Connected");
+          pool.execute(clientThread);
+          System.out.println("Connected");
+
+
+
+
       }
 
     }

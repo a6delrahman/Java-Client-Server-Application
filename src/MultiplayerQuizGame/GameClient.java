@@ -1,6 +1,6 @@
 package MultiplayerQuizGame;
 
-// -----> Import der benötigten Klassen:
+// -----> Import der bentigten Klassen:
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,7 +19,6 @@ public class GameClient {
 
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
-
     PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
     new Thread(serverCon).start();
@@ -29,15 +28,21 @@ public class GameClient {
       System.out.println("> Type Play, or quit to leave");
       String command = keyboard.readLine();
 
-      if (command.contains("quit")) break;
+      if (command.contains("quit")) {
+
+        out.close();
+        System.exit(0);
+      }
 
       out.println(command);
 
       String serverResponse = keyboard.readLine();
+      String a1 = "A";
+      if (serverResponse.contains("A")){
       System.out.println("server says: " + serverResponse);
+      }
 
-//      socket.close();
-//      System.exit(0);
+
     }
   }
 }
