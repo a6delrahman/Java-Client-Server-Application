@@ -57,7 +57,7 @@ public class ClientHandler implements Runnable {
           out.println("      " + allQuestions.get(6));
           out.println("      " + allQuestions.get(7));
         } else {
-          System.out.println("incorrect");
+          out.println("incorrect");
         }
 
         String answer2FromClient = in.readLine();
@@ -92,9 +92,5 @@ public class ClientHandler implements Runnable {
     for (ClientHandler client : clients) {
       client.out.println(s);
     }
-  }
-
-  public static void sendStringToClient(String text) {
-    System.out.println(text);
   }
 }

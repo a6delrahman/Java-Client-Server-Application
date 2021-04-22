@@ -20,9 +20,10 @@ public class GameServer {
     ServerSocket listener = new ServerSocket(PORT);
     try {
       int count = 1;
+      System.out.println("listening...");
+      System.out.println("waiting for all players to connect");
       while (true) {
-        System.out.println("listening...");
-        System.out.println("waiting for all players to connect");
+
         Socket client = listener.accept();
         ClientHandler clientThread = new ClientHandler(client, clients);
         PrintWriter clientWriter = new PrintWriter(client.getOutputStream(), true);
@@ -30,6 +31,9 @@ public class GameServer {
         System.out.println("hello " + client.getInetAddress().getHostAddress());
         clients.add(clientThread);
         pool.execute(clientThread);
+        if (clients.size() == 5){
+          System.out.println("all players connected");
+        }
       }
     } catch (IOException e) {
       e.printStackTrace();
