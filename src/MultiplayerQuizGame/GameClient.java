@@ -17,32 +17,21 @@ public class GameClient {
 
     ServerConnection serverCon = new ServerConnection(socket);
 
-    BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
-
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
     PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
     new Thread(serverCon).start();
 
     while (true) {
 
-      System.out.println("> Type Play, or quit to leave");
-      String command = keyboard.readLine();
-
-      if (command.contains("quit")) {
-
-        out.close();
+      String command = in.readLine();
+      if (command.equals("quit")) {
+        socket.close();
+        out.println("last player disconnected");
         System.exit(0);
       }
 
-      out.println(command);
-
-      String serverResponse = keyboard.readLine();
-      String a1 = "A";
-      if (serverResponse.contains("A")){
-      System.out.println("server says: " + serverResponse);
-      }
-
-
+      out.println(command); // out coming from server
     }
   }
 }

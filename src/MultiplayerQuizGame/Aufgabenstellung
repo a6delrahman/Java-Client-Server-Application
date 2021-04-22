@@ -12,5 +12,6 @@ Diese Textdatei wird Ihnen von Ihrem Dozenten gestellt.
 Die Spieler/Clients bekommen vom Server jeweils gleichzeitig eine Frage mit den vier Antwortmöglichkeiten zugesandt.
 Der Spieler/Client mit der schnellsten richtigen Antwort bekommt einen Punkt.
 Jeder Spieler/Client wird über den aktuellen Spielstand informiert.
+
 Sie dürfen kein Java Remote Method Invocation (RMI) und keine Drittbibliotheken verwenden, mit Ausnahme von JUnit.
 Sicherheitsaspekte und die Behandlung von Verbindungsunterbrüchen können Sie ausser Acht lassen.
