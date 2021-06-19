@@ -102,13 +102,13 @@ public class ClientHandler implements Runnable {
     out.println(
         Colors.PURPLE
             + "\n"
-            + "                                                                       ////////      ///////////\\      \\\\                      //      // \\\\           ////////      ////////        \\\\\\\\\\\\\\\\\\|                                                      \n"
-            + "                                                                       ||           //          \\\\      \\\\                    //      //   \\\\         ||            ||               ||      ||                                                   \n"
-            + "                                                                       ||          //            \\\\      \\\\                  //      //     \\\\        ||            ||                     ||                                                      \n"
-            + "                                                                       ||||||||   //              \\\\      \\\\      //\\\\      //      //       \\\\       ||||||||      ||||||||             ||||                                                        \n"
-            + "                                                                             ||   \\\\              //       \\\\    //  \\\\    //      //=========\\\\             ||            ||            |                                                           \n"
-            + "                                                                             ||    \\\\            //         \\\\  //    \\\\  //      //           \\\\            ||            ||            OO                                                          \n"
-            + "                                                                       //////||     \\\\////////////           \\\\//      \\\\//      //             \\\\     ////////      ||||||||            OO\n");
+            + "                                                                       ////////      ///////////\\      \\\\                      //      // \\\\           ////////       \\\\\\\\\\\\\\\\\\\\\\                                                      \n"
+            + "                                                                       ||           //          \\\\      \\\\                    //      //   \\\\         ||                      |||//                                                   "
+            + "                                                                       ||          //            \\\\      \\\\                  //      //     \\\\        ||                      |||                                                      "
+            + "                                                                       ||||||||   //              \\\\      \\\\      //\\\\      //      //       \\\\       ||||||||             ||||                                                        "
+            + "                                                                             ||   \\\\              //       \\\\    //  \\\\    //      //=========\\\\             ||              ||                                                           "
+            + "                                                                             ||    \\\\            //         \\\\  //    \\\\  //      //           \\\\            ||              O                                                          \n"
+            + "                                                                       //////||     \\\\////////////           \\\\//      \\\\//      //             \\\\     ////////              O\n");
 
     out.println(
         Colors.YELLOW
@@ -224,7 +224,7 @@ public class ClientHandler implements Runnable {
 
   /** Choosing the desidred Quiz File for the game. The player's Choice (input) will be passed as a String argument
    * to the method. If an invalid choice has been entered, the default quiz File will be Quiz number 1.
-   * @param quizNum String passed by Player as input   *
+   * @param quizNum String passed by Player as input.
    * */
 
   public void chooseQuizFile(String quizNum) {
@@ -248,7 +248,9 @@ public class ClientHandler implements Runnable {
     }
   }
 
-
+/** Checks if the User Input matches the available options.
+ * @param choice User's Choice (input).
+ * */
   private boolean isValidChoice(String choice) {
     return choice.contains("1") || choice.contains("2") || choice.contains("3");
   }
