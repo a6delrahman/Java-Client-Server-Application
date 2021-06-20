@@ -1,0 +1,25 @@
+@startuml
+actor Player
+actor Admin
+participant "ClientHandler" as A
+participant "GameClient" as B
+participant "ServerConnectionHandler" as C
+participant "GameServer" as D
+Admin -> D : starts the server
+activate D
+D -> C: Listening
+activate C
+activate B
+B <-> D: Client connected to Server (Socket TCP Port 9292)
+Player -> A
+A -> B : player joins the game
+activate A
+D -> C: connected to player
+A -> C: input / output from server to client / game started
+A -> B : Connected
+A <-> C : playing
+C -> B: Done Playing
+B <-> A : Replay or Quit
+A -> B: Disconnect request "quit"
+B -> C : player disconnected
+@enduml

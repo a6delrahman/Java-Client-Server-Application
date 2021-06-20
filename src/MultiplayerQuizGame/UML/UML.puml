@@ -1,0 +1,95 @@
+@startuml
+
+
+class GameServer{
+- PORT : int
+- clients : List<ClientHandler>
+- pool : ExecutorService
++ main() : void
+}
+
+interface Runnable {
+run() : void
+}
+
+
+class GameClient {
+    - SERVER_IP : String
+    - PORT : String
+    + main() : void
+}
+
+class ClientHandler{
+ClientHandler ---> Runnable
+
+  - clients : List<ClientHandler>
+  - playerScoreList : Map<String, Integer>
+  - in : BufferedReader
+  - out : PrintWriter
+  - DECO1 : String
+  - DECO2 : String
+  - DECO3 : String
+  - DECO4 : String
+  - VERBRAUCHTEZEIT : String
+  - fh : FileHandler
+  - kat1Path : Path
+  - kat2Path : Path
+  - kat3Path : Path
+  - scoreListPath : Path
+  - player : Player
+  + run() : void
+  + chooseQuizFile(String quizNum) : void
+  + isValidChoice(String choice) : boolean
+  + getScoreTable() : String
+  + getClients() : List<ClientHandler>
+  + nextQuestion(int index) : String
+  + isValidInput(String toValidate) : boolean
+  + printScoreList() : void
+}
+
+
+class ServerConnectionHandler{
+ServerConnectionHandler --> Runnable
+
+in : BufferedReader
+progress : StringBuilder
+shouldExit : AtomicBoolean
+server : Socket
++ run() : void
++ loading() : void
+}
+
+
+class FileHandler{
+- allDAta : ArrayList<String>
+- questions : CopyOnWriteArrayList<String>
+- answers : CopyOnWriteArrayList<String>
+- correctAnswers : List<Character>
++ questionsAndAnsToArray()  : List<String>
++ getCorrAns() : String
++ getQuestions() : List<String>
+}
+
+class Player{
+ - playerName : String
+ - index : int
+ - score : int
+ + resetScore() : void
+ + setName(String name) : void
+ + getPlayerName() : String
+ + incrementScore() : void
+ + decrementScore() : void
+ + getPlayerScore() : int
+}
+
+class Colors{
++ RED : String
++ YELLOW : String
++ BLUE : String
++ CYAN : String
++ PURPLE : String
++ WHITE : String
++ GREEN : String
+}
+
+@enduml
