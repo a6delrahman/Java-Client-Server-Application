@@ -7,8 +7,9 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/** This Class handles the multiple connections to the Server. It prints out all the responses form
- * the Server to all clients. The input Stream sends the data to the Output stream of the Game Client Class.
+/**
+ * This Class handles the multiple connections to the Server. It prints out all the responses from
+ * the Server to all clients at the same time. The input Stream sends the data to the Output stream of the Game Client Class.
  *
  * @author Abdelrahman Abdelwahed
  * */
@@ -21,7 +22,8 @@ public class ServerConnectionHandler implements Runnable {
 
 /**
  * Constructor for instantiating a connection between a Client an Server using Socket s and initializing/opening the input stream.
- * ShouldExit Atomic Boolean is used for Thread Safety instead of using true as a condition.
+ * shouldExit Atomic Boolean is used for Thread Safety instead of using true as a condition.
+ *
  * @param s Listening Socket
  *
  * */
@@ -45,16 +47,16 @@ public class ServerConnectionHandler implements Runnable {
 
       while (!shouldExit.get()) {
         String serverResponse = in.readLine();
-
+          // close stream and socket when quit has been typed
         if (serverResponse.equals("quit")) {
           server.close();
           in.close();
         }
         System.out.println(serverResponse);
-      }
+      }//message to be displayed when player disconnects or quits
     } catch (IOException | InterruptedException e) {
       Thread.currentThread().interrupt();
-      System.out.println("connection failed");
+      System.out.println("user quit the game");
     }finally{
       try {
         server.close();
