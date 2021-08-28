@@ -4,7 +4,7 @@ The aim of this documentation is to illustrate the concepts of Java multithreadi
 this client / server application.
 
 Use Case:
-To programm a java application that resembels th "Who wants to be a millionaire!" game. Several players should compete against each other in a quiz. The game should be a pure command line application without a graphical user interface.
+Java application that resembels th "Who wants to be a millionaire!" game. Several players should compete against each other in a quiz. The game should be a pure command line application without a graphical user interface.
 
 Scope / Requirements:
 
