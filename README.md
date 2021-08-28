@@ -14,7 +14,7 @@ Scope / Requirements:
 
     • Use of Java Sockets for communication between the clients and the server.
 
-    • The server reads the text file with the quiz questions. A quiz question consists of one question, each with four possible answers A to C (as in “Who Wants to Be a                 Millionaire?”).
+    • The server reads the text file with the quiz questions. A quiz question consists of one question, each with four possible answers A to C (as in “Who Wants to Be a Mllionaire?”).
 
     • The players / clients receive a question with the three possible answers, A B C, from the server at the same time.
 
