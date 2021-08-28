@@ -6,8 +6,10 @@ this client / server application.
 Use Case:
 To programm a java application that resembels th "Who wants to be a millionaire!" game. Several players should compete against each other in a quiz. The game should be a pure command line application without a graphical user interface.
 
-Scope:
-The entire Unicode character set can be used.
+Scope / Requirements:
+
+• The entire Unicode character set can be used.
+
 • All output appears on the command line on both the clients and the server.
 
 • Use of Java Sockets for communication between the clients and the server.
